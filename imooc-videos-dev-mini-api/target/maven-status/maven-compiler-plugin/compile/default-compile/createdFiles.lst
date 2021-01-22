@@ -1,0 +1,5 @@
+com\imooc\Application.class
+com\imooc\config\Swagger2.class
+com\imooc\controller\BasicController.class
+com\imooc\controller\RegistLoginController.class
+com\imooc\controller\UserController.class
