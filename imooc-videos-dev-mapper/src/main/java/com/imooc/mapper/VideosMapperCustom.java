@@ -23,7 +23,7 @@ public interface VideosMapperCustom extends MyMapper<Videos> {
 	/**
 	 * @Description: 查询点赞视频
 	 */
-	public List<VideosVO> queryMyLikeVideos(@Param("userId") String userId);
+	public List<VideosVO> queryMyLikeVideos( String userId);
 	
 	/**
 	 * @Description: 对视频喜欢的数量进行累加

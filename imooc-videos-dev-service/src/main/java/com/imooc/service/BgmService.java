@@ -1,6 +1,7 @@
 package com.imooc.service;
 
 import com.imooc.pojo.Bgm;
+import com.imooc.utils.PagedResult;
 
 import java.util.List;
 
@@ -20,4 +21,6 @@ public interface BgmService {
      * @Description: 根据id查询bgm信息
      */
     public Bgm queryBgmById(String bgmId);
+
+    public PagedResult queryBgmPage(Integer page, Integer pageSize);
 }

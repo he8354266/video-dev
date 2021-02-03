@@ -3,6 +3,7 @@ package com.imooc.service;
 import com.imooc.pojo.Comments;
 import com.imooc.pojo.Videos;
 import com.imooc.utils.PagedResult;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @Package * @Description:     * @author CodingSir
  * @date 2021/1/2217:16
  */
+
 public interface VideoService {
     /**
      * @Description: 保存视频
