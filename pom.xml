@@ -14,7 +14,11 @@
         <module>imooc-videos-dev-mapper</module>
         <module>imooc-videos-dev-common</module>
         <module>imooc-videos-dev-pojo</module>
-
+        <module>imooc-video-admin-pojo</module>
+        <module>imooc-video-admin-mapper</module>
+        <module>imooc-video-admin-mng</module>
+        <module>imooc-video-admin-service</module>
+        <module>imooc-video-admin-common</module>
     </modules>
 
     <name>微信小程序-短视频实战</name>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>客户信息</title>
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css"/>
+    <link rel="stylesheet" href="https://www.jq22.com/jquery/bootstrap-3.3.4.css">
+    <link rel="stylesheet" href="https://www.jq22.com/jquery/font-awesome.4.7.0.css">
+    <style type="text/css">
+	.box {
+		width: 20px;
+		height: 20px;
+		padding: 2px;
+		border: 1px solid #ccc;
+		border-radius: 2px;
+	}
+
+
+
+
+
+    </style>
+</head>
+<body>
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>填写客户信息</legend>
+</fieldset>
+
+<form class="layui-form" lay-filter="example">
+    <div class="layui-form-item">
+        <label class="layui-form-label layui-required">线路名称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="line_name" required    lay-verify="required" autocomplete="off" placeholder="请输入线路名称"
+                   class="layui-input">
+        </div>
+
+        <label class="layui-form-label">团号</label>
+        <div class="layui-input-inline">
+            <input type="text" name="trip_number" required   lay-verify="required" autocomplete="off" placeholder="请输入团号"
+                   class="layui-input">
+        </div>
+
+        <label class="layui-form-label">人数</label>
+        <div class="layui-input-inline">
+            <input type="text" name="people_number" required  lay-verify="required" autocomplete="off" placeholder="请输入人数"
+                   class="layui-input">
+        </div>
+
+
+        <div class="layui-inline">
+            <label class="layui-form-label">出发日期</label>
+            <div class="layui-input-inline">
+                <input type="text" name="start_date" required lay-verify="required"  autocomplete="off" class="layui-input" id="test5" placeholder="yyyy/MM/dd">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">结束日期</label>
+            <div class="layui-input-inline">
+                <input type="text" name="end_date" required  lay-verify="required" autocomplete="off"  class="layui-input" id="test6" placeholder="yyyy/MM/dd">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">客户联系人</label>
+        <div class="layui-input-inline">
+            <input type="text" name="customer_contact" required  lay-verify="required"  lay-verify="title" autocomplete="off" placeholder="请输入客户联系人"
+                   class="layui-input">
+        </div>
+
+        <label class="layui-form-label">客户联系人电话</label>
+        <div class="layui-input-inline">
+            <input type="text" name="customer_phone" required lay-verify="required"  lay-verify="title" autocomplete="off" placeholder="请输入客户联系人电话"
+                   class="layui-input">
+        </div>
+
+
+    </div>
+    <div class="container" style="    margin-left: 2%;">
+        <div class="row">
+            <div class="col-md-12" style="padding:2em 0;">
+                <p>点击 <i class="fa fa-pencil box"></i> 按钮可以对表格进行编辑，点击 <i class="fa fa-trash-o box"></i>按钮可以将该表格行删除。</p>
+                <p>客户信息填写</p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped" id="mytable">
+                        <thead>
+                        <tr>
+                            <td>姓名</td>
+                            <td>性别</td>
+                            <td>联系方式</td>
+                            <td>身份证号码</td>
+                            <td>紧急联系人</td>
+                            <td>联系方式</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>刀**</td>
+                            <td>女</td>
+                            <td>111112121</td>
+                            <td>111112121</td>
+                            <td>刀**</td>
+                            <td>111112121</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-12" style="padding-bottom:2em;">
+                <button type="button" class="btn btn-info" id="add"><i class="fa fa-plus"></i> 添加新的表格行</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="    margin-left: 2%;">
+        <div class="row">
+            <div class="col-md-12" style="padding:2em 0;">
+                <p>点击 <i class="fa fa-pencil box"></i> 按钮可以对表格进行编辑，点击 <i class="fa fa-trash-o box"></i>按钮可以将该表格行删除。</p>
+                <p>客户行程安排填写</p>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped" id="mytable2">
+                        <thead>
+                        <tr>
+                            <td>时间</td>
+                            <td>日期</td>
+                            <td>行程简介</td>
+                            <td>餐食</td>
+                            <td>酒店</td>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Day1</td>
+                            <td>9月60号</td>
+                            <td>丽江</td>
+                            <td>早</td>
+                            <td>云上哈巴</td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-12" style="padding-bottom:2em;">
+                <button type="button" class="btn btn-info" id="add2"><i class="fa fa-plus"></i> 添加新的表格行</button>
+            </div>
+        </div>
+    </div>
+    <blockquote class="layui-elem-quote">行程其他说明</blockquote>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注信息</label>
+        <div class="layui-input-block">
+            <textarea name="remarks" required  lay-verify="required" placeholder="请输入备注信息" class="layui-textarea"></textarea>
+        </div>
+    </div>
+
+
+    <blockquote class="layui-elem-quote">费用详情</blockquote>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">费用包含</label>
+        <div class="layui-input-block">
+            <textarea name="contain_cost" required  lay-verify="required" placeholder="请输入费用包含" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">费用不含</label>
+        <div class="layui-input-block">
+            <textarea name="exclude_cost" required  lay-verify="required" placeholder="请输入费用不含" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">赠送</label>
+        <div class="layui-input-block">
+            <textarea name="give" required  lay-verify="required" placeholder="请输入赠送" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+        </div>
+    </div>
+</form>
+<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js "></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.0.0/jquery.min.js" type="text/javascript"
+        charset="utf-8"></script>
+<script type="text/javascript">
+	/*
+	Bootstable
+	 @description  Javascript library to make HMTL tables editable, using Bootstrap
+	 @version 1.1
+	 @autor Tito Hinostroza
+	*/
+	  "use strict";
+	  //Global variables
+	  var params = null;  		//Parameters
+	  var colsEdi =null;
+	  var newColHtml = '<div class="btn-group pull-right">'+
+	'<button id="bEdit" type="button" class="btn btn-sm btn-default" onclick="rowEdit(this);">' +
+	'<span class="glyphicon glyphicon-pencil" > </span>'+
+	'</button>'+
+	'<button id="bElim" type="button" class="btn btn-sm btn-default" onclick="rowElim(this);">' +
+	'<span class="glyphicon glyphicon-trash" > </span>'+
+	'</button>'+
+	'<button id="bAcep" type="button" class="btn btn-sm btn-default" style="display:none;" onclick="rowAcep(this);">' + 
+	'<span class="glyphicon glyphicon-ok" > </span>'+
+	'</button>'+
+	'<button id="bCanc" type="button" class="btn btn-sm btn-default" style="display:none;" onclick="rowCancel(this);">' + 
+	'<span class="glyphicon glyphicon-remove" > </span>'+
+	'</button>'+
+	    '</div>';
+	  var colEdicHtml = '<td name="buttons">'+newColHtml+'</td>'; 
+	    
+	  $.fn.SetEditable = function (options) {
+	    var defaults = {
+	        columnsEd: null,         //Index to editable columns. If null all td editables. Ex.: "1,2,3,4,5"
+	        $addButton: null,        //Jquery object of "Add" button
+	        onEdit: function() {},   //Called after edition
+			onBeforeDelete: function() {}, //Called before deletion
+	        onDelete: function() {}, //Called after deletion
+	        onAdd: function() {}     //Called when added a new row
+	    };
+	    params = $.extend(defaults, options);
+	    this.find('thead tr').append('<th name="buttons"></th>');  //encabezado vacío
+	    this.find('tbody tr').append(colEdicHtml);
+		var $tabedi = this;   //Read reference to the current table, to resolve "this" here.
+	    //Process "addButton" parameter
+	    if (params.$addButton != null) {
+	        //Se proporcionó parámetro
+	        params.$addButton.click(function() {
+	            rowAddNew($tabedi.attr("id"));
+	        });
+	    }
+	    //Process "columnsEd" parameter
+	    if (params.columnsEd != null) {
+	        //Extract felds
+	        colsEdi = params.columnsEd.split(',');
+	    }
+	  };
+	function IterarCamposEdit($cols, tarea) {
+	//Itera por los campos editables de una fila
+	    var n = 0;
+	    $cols.each(function() {
+	        n++;
+	        if ($(this).attr('name')=='buttons') return;  //excluye columna de botones
+	        if (!EsEditable(n-1)) return;   //noe s campo editable
+	        tarea($(this));
+	    });
+	    
+	    function EsEditable(idx) {
+	    //Indica si la columna pasada está configurada para ser editable
+	        if (colsEdi==null) {  //no se definió
+	            return true;  //todas son editable
+	        } else {  //hay filtro de campos
+	//alert('verificando: ' + idx);
+	            for (var i = 0; i < colsEdi.length; i++) {
+	              if (idx == colsEdi[i]) return true;
+	            }
+	            return false;  //no se encontró
+	        }
+	    }
+	}
+	function FijModoNormal(but) {
+	    $(but).parent().find('#bAcep').hide();
+	    $(but).parent().find('#bCanc').hide();
+	    $(but).parent().find('#bEdit').show();
+	    $(but).parent().find('#bElim').show();
+	    var $row = $(but).parents('tr');  //accede a la fila
+	    $row.attr('id', '');  //quita marca
+	}
+	function FijModoEdit(but) {
+	    $(but).parent().find('#bAcep').show();
+	    $(but).parent().find('#bCanc').show();
+	    $(but).parent().find('#bEdit').hide();
+	    $(but).parent().find('#bElim').hide();
+	    var $row = $(but).parents('tr');  //accede a la fila
+	    $row.attr('id', 'editing');  //indica que está en edición
+	}
+	function ModoEdicion($row) {
+	    if ($row.attr('id')=='editing') {
+	        return true;
+	    } else {
+	        return false;
+	    }
+	}
+	function rowAcep(but) {
+	//Acepta los cambios de la edición
+	    var $row = $(but).parents('tr');  //accede a la fila
+	    var $cols = $row.find('td');  //lee campos
+	    if (!ModoEdicion($row)) return;  //Ya está en edición
+	    //Está en edición. Hay que finalizar la edición
+	    IterarCamposEdit($cols, function($td) {  //itera por la columnas
+	      var cont = $td.find('input').val(); //lee contenido del input
+	      $td.html(cont);  //fija contenido y elimina controles
+	    });
+	    FijModoNormal(but);
+	    params.onEdit($row);
+	}
+	function rowCancel(but) {
+	//Rechaza los cambios de la edición
+	    var $row = $(but).parents('tr');  //accede a la fila
+	    var $cols = $row.find('td');  //lee campos
+	    if (!ModoEdicion($row)) return;  //Ya está en edición
+	    //Está en edición. Hay que finalizar la edición
+	    IterarCamposEdit($cols, function($td) {  //itera por la columnas
+	        var cont = $td.find('div').html(); //lee contenido del div
+	        $td.html(cont);  //fija contenido y elimina controles
+	    });
+	    FijModoNormal(but);
+	}
+	function rowEdit(but) {  //Inicia la edición de una fila
+	    var $row = $(but).parents('tr');  //accede a la fila
+	    var $cols = $row.find('td');  //lee campos
+	    if (ModoEdicion($row)) return;  //Ya está en edición
+	    //Pone en modo de edición
+	    IterarCamposEdit($cols, function($td) {  //itera por la columnas
+	        var cont = $td.html(); //lee contenido
+	        var div = '<div style="display: none;">' + cont + '</div>';  //guarda contenido
+	        var input = '<input class="form-control input-sm"  value="' + cont + '">';
+	        $td.html(div + input);  //fija contenido
+	    });
+	    FijModoEdit(but);
+	}
+	function rowElim(but) {  //Elimina la fila actual
+	    var $row = $(but).parents('tr');  //accede a la fila
+	    params.onBeforeDelete($row);
+	    $row.remove();
+	    params.onDelete();
+	}
+	function rowAddNew(tabId) {  //Agrega fila a la tabla indicada.
+	var $tab_en_edic = $("#" + tabId);  //Table to edit
+	    var $filas = $tab_en_edic.find('tbody tr');
+	    if ($filas.length==0) {
+	        //No hay filas de datos. Hay que crearlas completas
+	        var $row = $tab_en_edic.find('thead tr');  //encabezado
+	        var $cols = $row.find('th');  //lee campos
+	        //construye html
+	        var htmlDat = '';
+	        $cols.each(function() {
+	            if ($(this).attr('name')=='buttons') {
+	                //Es columna de botones
+	                htmlDat = htmlDat + colEdicHtml;  //agrega botones
+	            } else {
+	                htmlDat = htmlDat + '<td></td>';
+	            }
+	        });
+	        $tab_en_edic.find('tbody').append('<tr>'+htmlDat+'</tr>');
+	    } else {
+	        //Hay otras filas, podemos clonar la última fila, para copiar los botones
+	        var $ultFila = $tab_en_edic.find('tr:last');
+	        $ultFila.clone().appendTo($ultFila.parent());  
+	        $ultFila = $tab_en_edic.find('tr:last');
+	        var $cols = $ultFila.find('td');  //lee campos
+	        $cols.each(function() {
+	            if ($(this).attr('name')=='buttons') {
+	                //Es columna de botones
+	            } else {
+	                $(this).html('');  //limpia contenido
+	            }
+	        });
+	    }
+		params.onAdd();
+	}
+	function TableToCSV(tabId, separator) {  //Convierte tabla a CSV
+	    var datFil = '';
+	    var tmp = '';
+		var $tab_en_edic = $("#" + tabId);  //Table source
+	    $tab_en_edic.find('tbody tr').each(function() {
+	        //Termina la edición si es que existe
+	        if (ModoEdicion($(this))) {
+	            $(this).find('#bAcep').click();  //acepta edición
+	        }
+	        var $cols = $(this).find('td');  //lee campos
+	        datFil = '';
+	        $cols.each(function() {
+	            if ($(this).attr('name')=='buttons') {
+	                //Es columna de botones
+	            } else {
+	                datFil = datFil + $(this).html() + separator;
+	            }
+	        });
+	        if (datFil!='') {
+	            datFil = datFil.substr(0, datFil.length-separator.length); 
+	        }
+	        tmp = tmp + datFil + '\n';
+	    });
+	    return tmp;
+	}
+
+
+
+
+
+
+</script>
+
+<script type="text/javascript">
+		$('#mytable').SetEditable({
+			$addButton: $('#add')
+			
+		});
+		$('#mytable2').SetEditable({
+			$addButton: $('#add2')
+			
+		});
+
+
+
+
+
+</script>
+<script type="text/javascript">
+	layui.use(['form', 'laydate','layer'], function(){
+	  var laydate = layui.laydate;
+	  	  var form = layui.form;
+	    var layer = layui.layer;
+	  
+	  //日期时间选择器
+	  laydate.render({
+	    elem: '#test5'
+	   ,format: 'yyyy/MM/dd'
+	  });
+	  
+  //日期时间选择器
+	  laydate.render({
+	    elem: '#test6'
+ ,format: 'yyyy/MM/dd'
+	  });
+	  
+	 form.on('submit(demo1)', function(data){
+     let customer_info = $("#mytable").find("tbody tr");
+	 let customer_info_len = $("#mytable").find("tbody tr").length;
+	 let arr = [];
+	 for(let i=0;i<customer_info_len;i++){
+		  let obj={
+		  	"name":customer_info.eq(i).find("td").eq(0)[0].innerHTML,
+		  		"sex":customer_info.eq(i).find("td").eq(1)[0].innerHTML,
+		  		"phone":customer_info.eq(i).find("td").eq(2)[0].innerHTML,
+		  		"id_card":customer_info.eq(i).find("td").eq(3)[0].innerHTML,
+		  		"emergency_contact":customer_info.eq(i).find("td").eq(4)[0].innerHTML,
+		  		"emergency_phone":customer_info.eq(i).find("td").eq(5)[0].innerHTML,
+		  }
+		  arr.push(obj)
+	 }
+	 	
+		
+		
+	let trip_info = $("#mytable2").find("tbody tr");
+	let trip_info_len = $("#mytable2").find("tbody tr").length;
+	let arr2 = [];
+	for(let i=0;i<trip_info_len;i++){
+			  let obj2={
+			  	"trip_day":trip_info.eq(i).find("td").eq(0)[0].innerHTML,
+			  		"trip_datetime":trip_info.eq(i).find("td").eq(1)[0].innerHTML,
+			  		"trip_desc":trip_info.eq(i).find("td").eq(2)[0].innerHTML,
+			  		"trip_meals":trip_info.eq(i).find("td").eq(3)[0].innerHTML,
+			  		"trip_hotel":trip_info.eq(i).find("td").eq(4)[0].innerHTML,
+			  }
+			  arr2.push(obj2)
+	}	
+		
+		
+			
+	 		 var formData = data.field;
+			 formData.customer_arr=arr;
+			  formData.trip_info=arr2;
+			 console.log(formData)
+			
+	 		  var saveLoading = parent.layer.msg('FeelEarth正在处理数据中，请稍候',{icon: 16,time:false,shade:0.8});
+	 		 $.ajax({
+	                 url : '/postInfo',
+	                 type : 'post',
+	                 data : formData,
+	                 success : function(data) {
+						 console.log(data)
+						 let resultId = data.data.resultId;
+	                 	parent.layer.close(saveLoading);
+	                 	if(data.code==1){
+	                 		parent.layer.msg("保存成功");
+							window.location.href="/poi?resultId="+resultId;
+	                 	}
+	                 }
+	 	  		});
+		  return false;
+	 	});
+	});
+
+
+
+
+
+
+</script>
+</body>
+</html>

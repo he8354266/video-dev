@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>FeelEarth出行表</title>
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css"/>
+</head>
+<body>
+<div id="app" class="header">
+    <img style="    width: 80%;
+    margin-left: 2%;
+    margin-top: 3%;" src="http://qiniu.feelearth.cn/6f3e820ea80ba9488f3ab3a4f4753de.png">
+    <div class="header_body">
+        <h2 class="header_tit">高山徒步攀登计划</h2>
+        <div class="body_info" style="    float: left;
+    margin-top: 0.5%;">
+            <ul>
+                <li style="margin-top: 1%;">嗨，山友你好！</li>
+                <li>感谢选择让我们在高山相遇，一起去完成对“ 探索 ”的挑战！</li>
+                <li>前行的路上，你会发现高海拔别样的风景，</li>
+                <li>这不仅需要勇气和毅力，更需要胆识和专业。</li>
+                <li>在探索的路上，Feelearth “安全下山” 品牌全程保障您的出行。</li>
+                <li>-</li>
+                <li>我们期待，此行能让你爱上高山徒步攀登。</li>
+            </ul>
+        </div>
+        <img style="    float: right;
+    width: 20%;" src="http://qiniu.feelearth.cn/53187899d3f3d6c31ea2e1a44373747.png">
+    </div>
+	
+	<hr class="layui-bg-green"/>
+ <blockquote style="    width: 50%;    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;" class="layui-elem-quote layui-text">
+            基本信息
+        </blockquote>
+		<div class="layui-form-item">
+		    <div class="layui-inline">
+		      <label class="layui-form-label">线路名称：</label>
+		      <div class="layui-input-inline">
+		        <input type="text" name="number" v-bind:value="lineName" disabled="true"  autocomplete="off" class="layui-input">
+		      </div>
+		    </div>
+		    
+		    
+		  </div>
+		
+		<div class="layui-form-item">
+		    <div class="layui-inline">
+		      <label class="layui-form-label">团号：</label>
+		      <div class="layui-input-inline">
+		        <input type="text" name="number" v-bind:value="tripNumber" disabled="true"  autocomplete="off" class="layui-input">
+		      </div>
+		    </div>
+		    <div class="layui-inline">
+		      <label class="layui-form-label">客户联系人：</label>
+		      <div class="layui-input-inline">
+		        <input type="text" name="date" v-bind:value="customerContact"  disabled="true" id="date" lay-verify="date"  autocomplete="off" class="layui-input">
+		      </div>
+		    </div>
+		    <div class="layui-inline">
+		      <label class="layui-form-label">电话：</label>
+		      <div class="layui-input-inline">
+		        <input type="tel" name="url" v-bind:value="customerPhone"  disabled="true" lay-verify="url" autocomplete="off" class="layui-input">
+		      </div>
+		    </div>
+		  </div>
+		  <div class="layui-form-item">
+		      <div class="layui-inline">
+		        <label class="layui-form-label">出行人数：</label>
+		        <div class="layui-input-inline">
+		          <input type="text" name="number" v-bind:value="peopleNum"  disabled="true" autocomplete="off" class="layui-input">
+		        </div>
+		      </div>
+		      <div class="layui-inline">
+		        <label class="layui-form-label">协作负责人：</label>
+		        <div class="layui-input-inline">
+		          <input type="text" value="包刚" id="date" disabled="true"  autocomplete="off" class="layui-input">
+		        </div>
+		      </div>
+		      <div class="layui-inline">
+		        <label class="layui-form-label">电话：</label>
+		        <div class="layui-input-inline">
+		          <input type="tel" value="13988743202" disabled="true" autocomplete="off" class="layui-input">
+		        </div>
+		      </div>
+		    </div>
+		  <div class="layui-form-item">
+		      <div class="layui-inline">
+		        <label class="layui-form-label">出发日期：</label>
+		        <div class="layui-input-inline">
+		          <input type="text" name="number" v-bind:value="createTime" disabled="true" autocomplete="off" class="layui-input">
+		        </div>
+		      </div>
+		      <div class="layui-inline">
+		        <label class="layui-form-label">结束日期：</label>
+		        <div class="layui-input-inline">
+		          <input type="text" name="date" v-bind:value="endTime" id="date" disabled="true"  autocomplete="off" class="layui-input">
+		        </div>
+		      </div>
+		      <div class="layui-inline">
+		        <label class="layui-form-label">服务监督人：</label>
+		        <div class="layui-input-inline">
+		          <input type="text"  value="张汉伟"  disabled="true" lay-verify="url" autocomplete="off" class="layui-input">
+		        </div>
+		      </div>
+			  <div class="layui-inline">
+			    <label class="layui-form-label">电话：</label>
+			    <div class="layui-input-inline">
+			      <input type="text"  value="15121812115"  disabled="true" lay-verify="url" autocomplete="off" class="layui-input">
+			    </div>
+			  </div>
+		    </div>
+    <hr class="layui-bg-green"/>
+    <div id="bg">
+        <blockquote style="    width: 50%;    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;" class="layui-elem-quote layui-text">
+            出行人信息
+        </blockquote>
+        <table style="margin-left: 2%;
+    width: 60%;" class="layui-table">
+            <colgroup>
+                <col width="150"/>
+                <col width="200"/>
+                <col/>
+            </colgroup>
+            <thead>
+            <tr >
+                <th>姓名</th>
+                <th>性别</th>
+                <th>联系方式</th>
+                <th>身份证号码</th>
+                <th>紧急联系人</th>
+                <th>联系方式</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="item in customerInfos">
+                <td v-cloak>{{item.name}}</td>
+                <td v-cloak>{{item.sex}}</td>
+                <td v-cloak>{{item.phone}}</td>
+                <td v-cloak>{{item.idCard}}</td>
+                <td v-cloak>{{item.emergencyContact}}</td>
+                <td v-cloak>{{item.emergencyPhone}}</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <hr class="layui-bg-green"/>
+    <div id="bg">
+        <blockquote style="    width: 50%;    margin-top: 2%;
+	margin-bottom: 2%;
+	margin-left: 2%;" class="layui-elem-quote layui-text">
+            行程安排
+        </blockquote>
+        <table style="margin-left: 2%;
+	width: 60%;" class="layui-table">
+            <colgroup>
+                <col width="150"/>
+                <col width="200"/>
+                <col/>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>时间</th>
+                <th>日期</th>
+                <th>行程简介</th>
+                <th>餐食</th>
+                <th>酒店</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="item in tripArranges">
+                <td v-cloak>{{item.tripDay}}</td>
+                 <td v-cloak>{{item.tripDatetime}}</td>
+                <td v-cloak>{{item.tripDesc}}</td>  
+                  <td v-cloak>{{item.tripMeals}}</td>  
+                <td v-cloak>{{item.tripHotel}}</td>
+
+            </tr>
+           
+            </tbody>
+        </table>
+    </div>
+    <hr class="layui-bg-green"/>
+    <div id="">
+        <blockquote style="    width: 50%;    margin-top: 2%;
+	margin-bottom: 2%;
+	margin-left: 2%;" class="layui-elem-quote layui-text">
+            行程其他说明
+        </blockquote>
+        <table style="margin-left: 2%;
+	width: 60%;" class="layui-table">
+            <colgroup>
+                <col width="150"/>
+                <col width="200"/>
+                <col/>
+            </colgroup>
+            <thead>
+
+            </thead>
+            <tbody>
+            <tr>
+                <td style="background-color: #f2f2f2;">备注信息</td>
+                <td v-cloak>{{remarks}}
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <hr class="layui-bg-green"/>
+    <div id="">
+        <blockquote style="    width: 50%;    margin-top: 2%;
+		margin-bottom: 2%;
+		margin-left: 2%;" class="layui-elem-quote layui-text">
+            费用详情
+        </blockquote>
+        <table style="margin-left: 2%;
+		width: 60%;" class="layui-table">
+            <colgroup>
+                <col width="150"/>
+                <col width="200"/>
+                <col/>
+            </colgroup>
+            <thead>
+
+            </thead>
+            <tbody>
+            <tr>
+                <td style="background-color: #f2f2f2;">费用包含</td>
+                <td v-cloak>{{containCost}}
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #f2f2f2;">费用不含</td>
+                <td v-cloak>{{excludeCost}}
+                </td>
+            </tr>
+            <tr>
+                <td style="background-color: #f2f2f2;">赠送</td>
+                <td v-cloak>{{give}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr class="layui-bg-green"/>
+    <div id="bg_bottom">
+        <blockquote style="    width: 50%;    margin-top: 2%;
+		  margin-bottom: 2%;
+		  margin-left: 2%;" class="layui-elem-quote layui-text">
+            安全须知
+        </blockquote>
+        <blockquote style="    width: 80%;
+    margin-left: 2%;" class="layui-elem-quote layui-quote-nm">
+            <ul>
+                <li>
+                    1.雪山一定要带有敬畏之心去接近他，当然我们接近雪山也会存在诸多不可控因素，特别是天气原因延误攀登在雪山登山中是比较常见的，所以所有参加活动的都要知道攀登的风险，更要掌量好自己的体能，不能麻木的看着顶峰前进。
+                </li>
+                <li>2.登山、徒步活动是一项带有危险性的探险活动，任何不可预测的情况均可能发生，参加活动的人员须认同这一点且完全自愿参加。</li>
+                <li>3.登山、徒步活动期间，因各种因素(时间原因、天气原因、身体状况原因等)不能达成预定目的(登顶)，活动费不予退还。</li>
+                <li>4.因交通阻绝，天气等不可抗拒的自然因素，不能达成预定目的，从活动费中扣除已经发生的费用和善后费用后，余款退还给队员。</li>
+                <li>5.对不听指挥，擅自行动或是有其他不利于管理与影响团队行为的，可当场给予辞退，任其自由活动，所有责任由其自负。</li>
+                <li>6.高血压、心脏病、哮喘、等心肺功能疾病者不适宜登山，近期做过手术不适宜登山。在报名中不能隐瞒自己的疾病史和过敏史。女性朋友请避开生理周期。</li>
+                <li>7.哈巴村为少数民族地区聚集地，请大家注意言谈举止，宗教信仰不容侵犯、尊重当地习俗，以免惹出不必要的事端。</li>
+                <li>8.哈巴为原始森林动植物保护区，保护野生动植物，不得捕杀和毁坏，保护生态环境，如触犯法律法规，后果自负。</li>
+                <li>9.在登山、徒步期间，参加队员不能饮酒，饮酒者如出现状况，后果自负。</li>
+                <li>10.爱护环境，不随意丢弃不可降解物品和垃圾，垃圾请带下山处理。</li>
+                <li>11.队员需自行或委托组织者购置必备的个人用品及装备，经组织者检查认为不符合活动要求的，应及时更换，因不听劝告而造成冻伤等事故或因个人装备问题造成的后果，均责任自负。</li>
+                <li>12.因是团队活动，活动计划有可能随特殊情况而进行调整。进山后，所有队员一定要听从领队指挥，不得私自行动，否则后果自负，于任何人无关。</li>
+                <li>13.在高山上如队员有严重高原反应，或其他因素，领队将有劝说队员退出登山活动的权利。</li>
+                <li>14.对不听指挥，擅自行动或是有其他不利于管理与影响团队行为的，可当场给予辞退，任其自由活动，所有责任由其自负。</li>
+                <li>15.登山、徒步是一项团队活动，队员应团结互爱、互相协作。</li>
+                <li>16.活动保险由活动组织方负责。特殊情况下(如需外界救援等)的额外支出，属于个人行为造成的由其个人承担，属于团队情况的(自然等不可抗力因素)均摊。</li>
+                <li>17.哈巴村交通不便，商店较少，请提前采购好登山过程中的个人能量棒等食品。高山食品参考:巧克力，牛肉干，奶糖，士力架，红牛，功能性饮料等。</li>
+                <li>18.本活动为特别行程，不接受吃住行方面的任何投诉，但我们会尽量安排好这方面的事宜，尽可能的让你满意。</li>
+                <li>19.进山过程中，手机网络信号几乎全无，电话信号断断续续，请山友做好准备，提前向亲朋说明情况。</li>
+                <li>20.进山前装备务必携带好，尤其手套帽子，否则受冷容易引起高反。</li>
+                <li>21.哈巴村可以洗澡，且提供电源及wifi，大本营提供简单洗漱，少量电源，无wifi。</li>
+                <li>22.大本营至顶峰路程约7千米，我们预留了8个小时冲顶时间，中午12点为雪山关门时间，如未按规定时间登顶，必须无理由下撤。</li>
+                <li>
+                    23.关于骑马，根据个人体力预定，登顶下撤这一天对体力要求相对较大，整体徒步距离约30千米，有15千米左右可骑马，如需骑马，必须提前预定，如当天临时定马匹，单程马匹马夫收取费用会很高，根据季节约500-800元，并且马需要临时从哈巴村拉到大本营。
+                </li>
+                <li>24.您此次的行程活动照片将会用于我们之后活动的推广与宣传，如拒绝，请单独说明。</li>
+            </ul>
+        </blockquote>
+    </div>
+	<img src="http://qiniu.feelearth.cn/f6772e4fd9dd1412df0270021639848.png" >
+</div>
+<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js "></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.0.0/jquery.min.js" type="text/javascript"
+        charset="utf-8"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.2.4/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			 
+			
+			
+			let resultId = window.location.search;
+			
+		
+			let customerId = 	resultId.substring(10,resultId.length);
+			console.log(customerId)
+			$.ajax({
+			        url : '/customerInfo?resultId='+customerId,
+			        type : 'get',
+			        data : customerId,
+			        success : function(data) {
+									 console.log(data)
+						var app = new Vue({
+						     el: '#app',
+						     data: data.data
+						   })		
+						   console.log(app)
+			       //  	parent.layer.close(saveLoading);
+			       //  	if(data.code==1){
+			       //  		parent.layer.msg("保存成功");
+										// window.location.href="/poi?resultId="+resultId;
+			       //  	}
+			        }
+				 	  		});
+		</script>
+<style>
+			.header_tit {
+				font-size: 30px;
+			}
+			.header_body{
+				margin-left: 2%;
+				width: 80%;
+				    margin-top: 4%;
+			}
+		.header_body ul	li{
+				list-style: none;
+				 
+				    font-size: 15px;
+				    font-family: ui-monospace;
+				    margin-bottom: 0.4%;
+			}
+			  .layui-bg-green{
+				  width: 80%;
+				    margin-left: 2%;
+				  
+				    margin-top: 2%;
+			  } 
+			  
+			  [v-cloak]{
+			      display: none;
+			  }
+#bg_bottom ul li{
+	    font-size: 14px;
+	    font-family: inherit;
+	    margin-bottom: 0.3%;
+}
+
+
+
+
+</style>
+</body>
+</html>
